@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+    list-style: none;
+    font-weight: normal;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.container-a {
+    width: 100%;
+    max-width: 900px;
+    margin: auto;
+}
+
+/* header */
+header {
+    position: sticky;
+    top: 0;
+    background: #fff;
+    z-index: 1;
+}
+
+.bar-nav {
+    display: flex;
+    padding: 1.3rem 1rem;
+    justify-content: space-between;
+}
+
+.social {
+    display: flex;
+    gap: 30px
+}
+
+nav ul {
+    display: flex;
+    gap: 10px;
+}
+
+nav ul li {
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.listSideBar {
+    display: none;
+}
+
+/* section description */
+main {
+    padding: 1rem;
+}
+
+section {
+    padding: 5rem 0;
+    min-height: 500px
+}
+
+.description h1 {
+    font-size: 60px;
+    font-weight: 600;
+}
+
+.description h2 {
+    margin-bottom: 1.3rem;
+    font-size: 30px;
+}
+
+.description p {
+    width: 100%;
+    max-width: 700px;
+    font-size: 20px;
+    margin-bottom: 2.5rem;
+}
+
+.linguagens {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+}
+
+.linguagens h3 {
+    font-size: 35px;
+    margin-bottom: 30px;
+}
+
+.linguagens ul {
+    display: flex;
+    justify-content: center;
+    gap: 30px
+}
+
+/* section projetos */
+.projetos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.projetos h2 {
+    font-size: 35px;
+    text-align: center;
+}
+
+.box-projetos {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+    justify-content: center;
+}
+
+.projeto {
+    position: relative;
+    background: #ddd;
+    width: 420px;
+    height: 250px;
+    border-radius: 3px;
+    padding: 4px;
+    display: flex;
+    align-items: end;
+}
+
+.name-projeto {
+    opacity: 0;
+    transition: .3s;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+}
+
+.projeto:hover .name-projeto {
+    opacity: 1;
+}
+
+.acction {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    padding: 6px;
+}
+
+/* footer */
+footer {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer-social ul {
+    display: flex;
+    gap: 20px
+}
+
+.footer-social {
+    margin-bottom: 20px;
+}
+
+@media (max-width: 550px) {
+    .listSideBar {
+        display: block;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .description h1 {
+        font-size: 35px;
+    }
+
+    .description h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 460px) {
+    .projeto {
+        width: 100%;
+    }
+}
