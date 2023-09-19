@@ -66,7 +66,7 @@ section {
 }
 
 .description h1 {
-    font-size: 60px;
+    font-size: 60;
     font-weight: 600;
 }
 
@@ -90,8 +90,8 @@ section {
 }
 
 .linguagens h3 {
-    font-size: 35px;
-    margin-bottom: 30px;
+    font-size: 30px;
+    margin-bottom: 40px;
 }
 
 .linguagens ul {
@@ -108,12 +108,12 @@ section {
 }
 
 .projetos h2 {
-    font-size: 35px;
+    font-size: 32px;
     text-align: center;
 }
 
 .box-projetos {
-    margin-top: 50px;
+    margin-top: 30px;
     display: flex;
     flex-wrap: wrap;
     gap: 35px;
@@ -186,6 +186,10 @@ footer {
 
     .description h2 {
         font-size: 20px;
+    }
+
+    .description p {
+        font-size: 18px;
     }
 }
 
