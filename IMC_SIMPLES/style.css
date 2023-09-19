@@ -1,0 +1,27 @@
+.calculadora {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.calc-imc {
+    display: flex;
+    flex-direction: column;
+}
+
+.calc-imc input:first-of-type {
+    margin-bottom: 5px;
+}
+
+.buttons {
+    margin: 15px auto;
+}
+
+.resultado {
+    width: 150px;
+    padding: 8px 0;
+    border-radius: 3px;
+    text-align: center;
+    background: #ddd;
+}
