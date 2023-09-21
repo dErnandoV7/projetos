@@ -29,6 +29,7 @@ body {
     width: 90%;
     max-width: 500px;
     background: #ffffff14;
+    border-radius: 10px;
     backdrop-filter: blur(2px);
 }
 
