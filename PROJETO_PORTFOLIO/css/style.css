@@ -1,15 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
-  --paletaAcor1: #fff;
-  --paletaAcor2: #385f68;
-  --paletaAcor3: #5693a2;
-  --paletaAcor4: #a8ffff;
+  --bg-clear: #fff;
+  --bg-clear-footer: #290f4a;
+  --font-color1: #6d29c3;
+  --font-color2: #000;
+  --font-color3: #000;
+}
 
-  --paletaBcor1: #6d29c3;
-  --paletaBcor2: #290f4a;
-  --paletaBcor3: #7b2edb;
-  --paletaBcor4: #160828;
+:root.dark-mode {
+  --bg-clear: #160828;
+  --bg-clear-footer: #160828;
+  --font-color1: #ddd;
+  --font-color2: #ddd;
+  --font-color3: #6d29c3;
 }
 
 * {
@@ -37,7 +41,7 @@
 header {
   position: sticky;
   top: 0;
-  background: var(--paletaAcor1);
+  background: var(--bg-clear);
   z-index: 1;
 }
 
@@ -67,7 +71,7 @@ nav ul li {
   text-transform: uppercase;
   font-size: 16px;
   font-weight: 500;
-  color: var(--paletaBcor1);
+  color: var(--font-color1);
 }
 
 .listSideBar {
@@ -77,7 +81,7 @@ nav ul li {
 /* section description */
 main {
   padding: 1rem;
-  background: var(--paletaAcor1);
+  background: var(--bg-clear);
 }
 
 section {
@@ -88,23 +92,23 @@ section {
 .description h1 {
   font-size: 60px;
   font-weight: 600;
-  color: var(--paletaBcor1);
+  color: var(--font-color1);
 
 }
 
 .description h1 span {
-  color: var(--paletaBcor4);
+  color: var(--font-color3);
   font-size: 60px
 }
 
 .description h2 {
   margin-bottom: 1.3rem;
   font-size: 30px;
-  color: #000;
+  color: var(--font-color3);
 }
 
 .description h2 span {
-  color: var(--paletaBcor1);
+  color: var(--font-color1);
   font-weight: bold;
 }
 
@@ -113,22 +117,22 @@ section {
   max-width: 700px;
   font-size: 20px;
   margin-bottom: 2.5rem;
-  color: #000;
+  color: var(--font-color2);
 }
 
 /* download cv */
 .download-cv {
-  border: 1.5px solid var(--paletaBcor1);
+  border: 1.5px solid #6d29c3;
   width: max-content;
   padding: 8px 12px;
   border-radius: 10px;
-  color: var(--paletaBcor1);
+  color: #6d29c3;
   transition: .3s;
   cursor: pointer;
 }
 
 .download-cv:hover {
-  background: var(--paletaBcor1);
+  background: #6d29c3;
   color: #fff;
 }
 
@@ -142,7 +146,7 @@ section {
 .linguagens h3 {
   font-size: 30px;
   margin-bottom: 40px;
-  color: var(--paletaBcor1);
+  color: #6d29c3;
   font-weight: bold;
 }
 
@@ -186,10 +190,11 @@ section {
 .projetos h2 {
   font-size: 28px;
   text-align: center;
+  color: var(--font-color2);
 }
 
 .projetos h2 span {
-  color: var(--paletaBcor1);
+  color: #6d29c3;
   font-weight: bold;
 }
 
@@ -241,7 +246,7 @@ footer {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: var(--paletaBcor2);
+  background: var(--bg-clear-footer);
 }
 
 .footer-social ul {
