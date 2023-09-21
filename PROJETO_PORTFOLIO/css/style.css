@@ -129,6 +129,7 @@ section {
   color: #6d29c3;
   transition: .3s;
   cursor: pointer;
+  font-size: 20px
 }
 
 .download-cv:hover {
@@ -157,7 +158,7 @@ section {
 }
 
 .filterDarkIcon {
-  filter: brightness(10%);
+  filter: brightness(50%);
 }
 
 .icon-l {

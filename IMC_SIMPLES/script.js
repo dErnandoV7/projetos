@@ -19,7 +19,7 @@ calcularImc.onclick = function calcular() {
         } else if (imc > 0) {
             document.querySelector(".resultado").innerText = "Abaixo do peso normal"
         } else {
-            document.querySelector(".resultado").innerText = ""
+            document.querySelector(".resultado").innerText = "Dados inválidos"
         }
     }
     return analisarImc();
