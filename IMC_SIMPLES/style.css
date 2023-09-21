@@ -77,6 +77,10 @@ input::placeholder {
     gap: 15px
 }
 
+.buttons input:not(:first-of-type){
+    color: yellow
+}
+
 .resultado {
     width: 150px;
     padding: 8px 0;
