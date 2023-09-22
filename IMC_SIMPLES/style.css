@@ -16,6 +16,7 @@ body {
     min-height: 100vh;
     background: url(img/fundo-de-tela.gif) no-repeat;
     background-size: cover;
+    position: relative
 }
 
 .calculadora {
@@ -92,7 +93,7 @@ input::placeholder {
 
 footer {
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     font-size: 12px;
 }
 
