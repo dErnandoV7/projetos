@@ -1,5 +1,5 @@
 function forDark() {
-  document.querySelector(":root").classList.add("dark-mode")
+  document.querySelector(":root").classList.remove("dark-mode")
   document.querySelector(".linkedin img").src = "img/linkedinDark.svg"
   document.querySelector(".code img").src = "img/code-slashDark.svg"
   document.querySelector(".github img").src = "img/githubDark.svg"
@@ -10,7 +10,7 @@ function forDark() {
 }
 
 function forClear() {
-  document.querySelector(":root").classList.remove("dark-mode")
+  document.querySelector(":root").classList.add("dark-mode")
   document.querySelector(".linkedin img").src = "img/linkedinLight.svg"
   document.querySelector(".code img").src = "img/code-slashLight.svg"
   document.querySelector(".github img").src = "img/githubLight.svg"
@@ -24,11 +24,11 @@ function themeMode() {
   let mode = document.querySelector(".themeModeImg")
   if (mode.classList.contains("on")) {
     mode.classList.remove("on")
-    mode.src = "img/light.svg"
-    forDark()
-  } else {
-    mode.classList.add("on")
     mode.src = "img/dark.svg"
     forClear()
+  } else {
+    mode.classList.add("on")
+    mode.src = "img/light.svg"
+    forDark()
   }
 }

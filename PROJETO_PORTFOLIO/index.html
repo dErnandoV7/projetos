@@ -12,35 +12,34 @@
   <header class="dark-background-white">
     <div class="bar-nav container">
       <div class="listSideBar">
-        <img src="img/listLight.svg" alt="">
+        <img src="img/listDark.svg" alt="">
       </div>
       <div class="social">
         <div class="social-img github">
-          <img src="img/githubLight.svg" alt="">
+          <img src="img/githubDark.svg" alt="">
         </div>
         <div class="social-img linkedin">
-          <img src="img/linkedinLight.svg" alt="">
+          <img src="img/linkedinDark.svg" alt="">
         </div>
         <div class="social-img code">
-          <img src="img/code-slashLight.svg" alt="">
+          <img src="img/code-slashDark.svg" alt="">
         </div>
       </div>
       <nav>
         <ul>
-          <li>Home</li>
-          <li>Sobre</li>
-          <li>Projetos</li>
-          <li>Contato</li>
+          <li><a href="#home">Home</a></li>
+          <li><a href="#projetos">Projetos</a></li>
+          <li><a href="#contato">Contato</a></li>
         </ul>
       </nav>
-      <div class="themeMode" onclick="themeMode()"><img src="img/dark.svg" class="themeModeImg on" alt=""></div>
+      <div class="themeMode" onclick="themeMode()"><img src="img/light.svg" class="themeModeImg on" alt=""></div>
     </div>
   </header>
   <main class="dark-background-white">
-    <section class="presentation container">
+    <section class="presentation container" id="home">
       <div class="description">
         <h1>Ernando Matias<span>.</span></h1>
-        <h2>Desenvolvedor <span>Front-End</span></h2>
+        <h2><strong>Desenvolvedor <span>Front-End</span></strong></h2>
         <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, ipsa perspiciatis magnam quasi velit
           est corrupti neque cum porro doloribus reprehenderit cumque sapiente eius eum quas animi quaerat
           esse quae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, animi quod. Ratione
@@ -61,7 +60,7 @@
         <li><img class="js icon-l" src="img/js.svg" alt=""></li>
       </ul>
     </section>
-    <section class="projetos container">
+    <section class="projetos container" id="projetos">
       <h2>Área de <span>Projetos</span></h2>
       <div class="box-projetos">
         <div class="projeto">
@@ -111,7 +110,7 @@
       </div>
     </section>
   </main>
-  <footer class="dark-background">
+  <footer class="dark-background" id="contato">
     <div class="footer-social">
       <ul>
         <li><img src="img/instagram.svg" alt=""></li>
