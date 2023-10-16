@@ -5,27 +5,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="footer.css">
     <title>Calculadora IMC</title>
 </head>
 
 <body>
-    <div class="calculadora">
-        <h1>Calcule seu IMC</h1>
-        <form class="calc-imc">
-            <input type="text" placeholder="Insira seu peso em Kg" class="peso">
-            <input type="text" placeholder="Insira sua altura em M" class="altura">
-            <div class="buttons">
-                <input type="reset" value="Limpar">
-                <input type="button" value="Calcular" class="calcular">
+    <div class="calculadora-container">
+        <div class="calculadora">
+            <h1>Calcule seu IMC</h1>
+            <form class="calc-imc">
+                <input type="text" placeholder="Insira seu peso em Kg" class="peso">
+                <input type="text" placeholder="Insira sua altura em M" class="altura">
+                <div class="buttons">
+                    <input type="reset" value="Limpar">
+                    <input type="button" value="Calcular" class="calcular">
+                </div>
+            </form>
+            <div class="resultado-box">
+                <p class="resultado"></p>
             </div>
-        </form>
-        <div class="resultado-box">
-            <p class="resultado"></p>
         </div>
     </div>
-    <footer>
-        <p>Developed by <span>d.ErnandoV7</span></p>
-    </footer>
+    <footer class="myFooter">
+        <div class="informacoes-profissionais">
+          <p>Desenvolvido por <strong>Ernando Matias</strong></p>
+          <ul class="habilidades">
+            <li><img src="img/html.png" /></li>
+            <li><img src="img/css.png" /></li>
+            <li><img src="img/js.png" /></li>
+          </ul>
+        </div>
+        <div class="redes-sociais">
+          <ul>
+            <li>
+              <a href="https://api.whatsapp.com/send?phone=558897244032"
+                ><img src="img/whatsapp.svg" alt="img/whatsapp.svg"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/a.m.ernando"
+                ><img src="img/instagram.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="https://github.com/dErnandoV7"
+                ><img src="img/github.svg" alt=""
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.tiktok.com/@servodejc"
+                ><img src="img/tiktok.svg" alt=""
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </footer>
+      
     <script src="script.js"></script>
 </body>
 

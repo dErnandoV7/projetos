@@ -1,125 +1,158 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/footer.css">
+    <title>Portfólio</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <title>Portfólio</title>
-</head>
-
-<body>
-  <header class="dark-background-white">
-    <div class="bar-nav container">
-      <div class="listSideBar">
-        <img src="img/listDark.svg" alt="">
+  <body>
+    <header class="dark-background-white">
+      <div class="bar-nav container">
+        <div class="listSideBar">
+          <img src="img/listDark.svg" alt="" />
+        </div>
+        <div class="social">
+          <div class="social-img github">
+            <img src="img/githubDark.svg" alt="" />
+          </div>
+          <div class="social-img linkedin">
+            <img src="img/linkedinDark.svg" alt="" />
+          </div>
+          <div class="social-img code">
+            <img src="img/code-slashDark.svg" alt="" />
+          </div>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#projetos">Projetos</a></li>
+            <li><a href="#contato">Contato</a></li>
+          </ul>
+        </nav>
+        <div class="themeMode" onclick="themeMode()">
+          <img src="img/light.svg" class="themeModeImg on" alt="" />
+        </div>
       </div>
-      <div class="social">
-        <div class="social-img github">
-          <img src="img/githubDark.svg" alt="">
-        </div>
-        <div class="social-img linkedin">
-          <img src="img/linkedinDark.svg" alt="">
-        </div>
-        <div class="social-img code">
-          <img src="img/code-slashDark.svg" alt="">
-        </div>
-      </div>
-      <nav>
-        <ul>
-          <li><a href="#home">Home</a></li>
-          <li><a href="#projetos">Projetos</a></li>
-          <li><a href="#contato">Contato</a></li>
-        </ul>
-      </nav>
-      <div class="themeMode" onclick="themeMode()"><img src="img/light.svg" class="themeModeImg on" alt=""></div>
-    </div>
-  </header>
-  <main class="dark-background-white">
-    <section class="presentation container" id="home">
-      <div class="description">
-        <h1>Ernando Matias<span>.</span></h1>
-        <h2><strong>Desenvolvedor <span>Front-End</span></strong></h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit, ipsa perspiciatis magnam quasi velit
-          est corrupti neque cum porro doloribus reprehenderit cumque sapiente eius eum quas animi quaerat
-          esse quae! Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum, animi quod. Ratione
-          quo consequuntur hic nobis consectetur aliquid veniam nam debitis eaque, dolore eligendi blanditiis!
-          Id nihil quibusdam provident obcaecati? </p>
+    </header>
+    <main class="dark-background-white">
+      <section class="presentation container" id="home">
+        <div class="description">
+          <h1>Ernando Matias<span>.</span></h1>
+          <h2>
+            <strong>Desenvolvedor <span>Front-End</span></strong>
+          </h2>
+          <p>
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit,
+            ipsa perspiciatis magnam quasi velit est corrupti neque cum porro
+            doloribus reprehenderit cumque sapiente eius eum quas animi quaerat
+            esse quae! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Voluptatum, animi quod. Ratione quo consequuntur hic nobis
+            consectetur aliquid veniam nam debitis eaque, dolore eligendi
+            blanditiis! Id nihil quibusdam provident obcaecati?
+          </p>
           <div class="download-cv">
             <h3>Download CV</h3>
           </div>
+        </div>
+      </section>
+      <section class="linguagens container">
+        <h3>Linguagens</h3>
+        <ul>
+          <li>
+            <img class="html icon-l" src="img/html.svg" alt="" />
+          </li>
+          <li><img class="css icon-l" src="img/css.svg" alt="" /></li>
+          <li><img class="js icon-l" src="img/js.svg" alt="" /></li>
+        </ul>
+      </section>
+      <section class="projetos container" id="projetos">
+        <h2>Área de <span>Projetos</span></h2>
+        <div class="box-projetos">
+          <div class="projeto">
+            <p class="name-projeto">Nome do projeto</p>
+            <div class="acction">
+              <div class="ver-code">
+                <img src="img/file-earmark-code.svg" alt="Ver código" />
+              </div>
+              <div class="run-projeto">
+                <img src="img/lightning-fill.svg" alt="Executar código" />
+              </div>
+            </div>
+          </div>
+          <div class="projeto">
+            <p class="name-projeto">Nome do projeto</p>
+            <div class="acction">
+              <div class="ver-code">
+                <img src="img/file-earmark-code.svg" alt="Ver código" />
+              </div>
+              <div class="run-projeto">
+                <img src="img/lightning-fill.svg" alt="Executar código" />
+              </div>
+            </div>
+          </div>
+          <div class="projeto">
+            <p class="name-projeto">Nome do projeto</p>
+            <div class="acction">
+              <div class="ver-code">
+                <img src="img/file-earmark-code.svg" alt="Ver código" />
+              </div>
+              <div class="run-projeto">
+                <img src="img/lightning-fill.svg" alt="Executar código" />
+              </div>
+            </div>
+          </div>
+          <div class="projeto">
+            <p class="name-projeto">Nome do projeto</p>
+            <div class="acction">
+              <div class="ver-code">
+                <img src="img/file-earmark-code.svg" alt="Ver código" />
+              </div>
+              <div class="run-projeto">
+                <img src="img/lightning-fill.svg" alt="Executar código" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="myFooter">
+      <div class="informacoes-profissionais">
+        <p>Desenvolvido por <strong>Ernando Matias</strong></p>
+        <ul class="habilidades">
+          <li><img src="img/html.png" /></li>
+          <li><img src="img/css.png" /></li>
+          <li><img src="img/js.png" /></li>
+        </ul>
       </div>
-    </section>
-    <section class="linguagens container">
-      <h3>Linguagens</h3>
-      <ul>
-        <li>
-          <img class="html icon-l" src="img/html.svg" alt="">
-        </li>
-        <li><img class="css icon-l" src="img/css.svg" alt=""></li>
-        <li><img class="js icon-l" src="img/js.svg" alt=""></li>
-      </ul>
-    </section>
-    <section class="projetos container" id="projetos">
-      <h2>Área de <span>Projetos</span></h2>
-      <div class="box-projetos">
-        <div class="projeto">
-          <p class="name-projeto">Nome do projeto</p>
-          <div class="acction">
-            <div class="ver-code">
-              <img src="img/file-earmark-code.svg" alt="Ver código">
-            </div>
-            <div class="run-projeto">
-              <img src="img/lightning-fill.svg" alt="Executar código">
-            </div>
-          </div>
-        </div>
-        <div class="projeto">
-          <p class="name-projeto">Nome do projeto</p>
-          <div class="acction">
-            <div class="ver-code">
-              <img src="img/file-earmark-code.svg" alt="Ver código">
-            </div>
-            <div class="run-projeto">
-              <img src="img/lightning-fill.svg" alt="Executar código">
-            </div>
-          </div>
-        </div>
-        <div class="projeto">
-          <p class="name-projeto">Nome do projeto</p>
-          <div class="acction">
-            <div class="ver-code">
-              <img src="img/file-earmark-code.svg" alt="Ver código">
-            </div>
-            <div class="run-projeto">
-              <img src="img/lightning-fill.svg" alt="Executar código">
-            </div>
-          </div>
-        </div>
-        <div class="projeto">
-          <p class="name-projeto">Nome do projeto</p>
-          <div class="acction">
-            <div class="ver-code">
-              <img src="img/file-earmark-code.svg" alt="Ver código">
-            </div>
-            <div class="run-projeto">
-              <img src="img/lightning-fill.svg" alt="Executar código">
-            </div>
-          </div>
-        </div>
+      <div class="redes-sociais">
+        <ul>
+          <li>
+            <a href="https://api.whatsapp.com/send?phone=558897244032"
+              ><img src="img/whatsapp.svg" alt="img/whatsapp.svg"
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.instagram.com/a.m.ernando"
+              ><img src="img/instagram.svg" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="https://github.com/dErnandoV7"
+              ><img src="img/github.svg" alt=""
+            /></a>
+          </li>
+          <li>
+            <a href="https://www.tiktok.com/@servodejc"
+              ><img src="img/tiktok.svg" alt=""
+            /></a>
+          </li>
+        </ul>
       </div>
-    </section>
-  </main>
-  <footer class="dark-background" id="contato">
-    <div class="footer-social">
-      <ul>
-        <li><img src="img/instagram.svg" alt=""></li>
-        <li><img src="img/whatsapp.svg" alt=""></li>
-      </ul>
-    </div>
-    <p>&copy; <span>d</span>ErnandoV<span>7</span> 2023</p>
-  </footer>
-  <script src="js/script.js"></script>
-</body>
+    </footer>
 
+    <script src="js/script.js"></script>
+  </body>
 </html>

@@ -252,25 +252,6 @@ section {
   padding: 6px;
 }
 
-/* footer */
-footer {
-  padding: 2rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: var(--bg-clear-footer);
-}
-
-.footer-social ul {
-  display: flex;
-  gap: 20px;
-}
-
-.footer-social {
-  margin-bottom: 20px;
-}
-
 @media (max-width: 550px) {
   .listSideBar {
     display: block;
