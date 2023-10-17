@@ -87,13 +87,16 @@ nav ul li a:hover {
 
 /* section description */
 main {
-  padding: 1rem;
   background: var(--bg-clear);
 }
 
 section {
   padding: 5rem 0;
   min-height: 500px
+}
+
+.presentation {
+  padding: 1rem;
 }
 
 .description h1 {
@@ -198,12 +201,13 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background: #262626;
 }
 
 .projetos h2 {
   font-size: 28px;
   text-align: center;
-  color: var(--font-color2);
+  color: #ffff;
 }
 
 .projetos h2 span {
@@ -230,7 +234,23 @@ section {
   align-items: end;
 }
 
-.name-projeto {
+.projeto span {
+  position: absolute;
+  background: #262626dd;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 42px;
+  backdrop-filter: blur(2px);
+  bottom: 0px;
+}
+
+.sorteio {
+  background: #ddd url(../img/img-projetos/sorteio.jpeg) no-repeat center top;
+  background-size: cover;
+}
+
+.name-projeto-container {
   opacity: 0;
   transition: .3s;
   position: absolute;
@@ -238,18 +258,61 @@ section {
   left: 50%;
   transform: translate(-50%, -50%);
   width: 100%;
+  height: 100%;
   text-align: center;
+  font-size: 25px;
+  background: rgba(56, 55, 55, 0.418);
+  backdrop-filter: blur(4px);
 }
 
-.projeto:hover .name-projeto {
+.name-projeto {
+  color: #f3dc4c;
+  font-weight: bold;
+  position: relative;
+  text-shadow: 1px 1px 1px #000;
+  margin-top: 60px;
+}
+
+.name-projeto-container:hover {
   opacity: 1;
 }
 
-.acction {
+.action {
   width: 100%;
   display: flex;
   justify-content: space-between;
-  padding: 6px;
+  position: relative;
+}
+
+.action__icon:hover {
+  animation: animation-icon 1s linear infinite;
+  width: 30px;
+}
+
+.projeto-linguage {
+  margin-top: 30px;
+}
+
+@keyframes animation-icon {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(4deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(-4deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
 }
 
 @media (max-width: 550px) {

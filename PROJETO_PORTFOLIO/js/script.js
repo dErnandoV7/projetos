@@ -1,12 +1,15 @@
+'use strict'
+
 function forDark() {
   document.querySelector(":root").classList.remove("dark-mode")
   document.querySelector(".linkedin img").src = "img/linkedinDark.svg"
   document.querySelector(".code img").src = "img/code-slashDark.svg"
   document.querySelector(".github img").src = "img/githubDark.svg"
   document.querySelector(".listSideBar img").src = "img/listDark.svg"
-  document.querySelectorAll(".icon-l")[0].classList.add("filterDarkIcon")
-  document.querySelectorAll(".icon-l")[1].classList.add("filterDarkIcon")
-  document.querySelectorAll(".icon-l")[2].classList.add("filterDarkIcon")
+  const arrayIcons = document.querySelectorAll(".icon-l")
+  arrayIcons.forEach(icon => {
+    icon.classList.add("filterDarkIcon")
+  })
 }
 
 function forClear() {
@@ -15,9 +18,10 @@ function forClear() {
   document.querySelector(".code img").src = "img/code-slashLight.svg"
   document.querySelector(".github img").src = "img/githubLight.svg"
   document.querySelector(".listSideBar img").src = "img/listLight.svg"
-  document.querySelectorAll(".icon-l")[0].classList.remove("filterDarkIcon")
-  document.querySelectorAll(".icon-l")[1].classList.remove("filterDarkIcon")
-  document.querySelectorAll(".icon-l")[2].classList.remove("filterDarkIcon")
+  const arrayIcons = document.querySelectorAll(".icon-l")
+  arrayIcons.forEach(icon => {
+    icon.classList.remove("filterDarkIcon")
+  })
 }
 
 function themeMode() {
