@@ -23,6 +23,7 @@
   font-family: 'Fira Sans', sans-serif;
   list-style: none;
   scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 .container {
@@ -45,18 +46,18 @@ header {
   z-index: 1;
 }
 
-.bar-nav {
+.bar__nav {
   display: flex;
   padding: 1rem 1rem;
   justify-content: space-between;
 }
 
-.social {
+.nav__social {
   display: flex;
   gap: 30px
 }
 
-.social-img,
+.social__img,
 .themeMode {
   cursor: pointer;
 }
@@ -81,7 +82,7 @@ nav ul li a:hover {
   text-shadow: 0px 0px 20px #ffd700;
 }
 
-.listSideBar {
+.nav__listSideBar {
   display: none;
 }
 
@@ -157,10 +158,12 @@ section {
   flex-direction: column;
   text-align: center;
   justify-content: center;
+  transform: translateX(-100%);
+  transition: .6s;
 }
 
 .linguagens h3 {
-  font-size: 30px;
+  font-size: 40px;
   margin-bottom: 40px;
   color: #ffd700;
   font-weight: bold;
@@ -202,6 +205,8 @@ section {
   flex-direction: column;
   align-items: center;
   background: #262626;
+  transform: translateX(200%);
+  transition: .6s;
 }
 
 .projetos h2 {
@@ -226,23 +231,12 @@ section {
 .projeto {
   position: relative;
   background: #ddd;
-  width: 420px;
-  height: 250px;
+  width: 500px;
+  height: 300px;
   border-radius: 3px;
   padding: 4px;
   display: flex;
   align-items: end;
-}
-
-.projeto span {
-  position: absolute;
-  background: #262626dd;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 100%;
-  height: 42px;
-  backdrop-filter: blur(2px);
-  bottom: 0px;
 }
 
 .sorteio {
@@ -269,7 +263,6 @@ section {
   color: #f3dc4c;
   font-weight: bold;
   position: relative;
-  text-shadow: 1px 1px 1px #000;
   margin-top: 60px;
 }
 
@@ -316,7 +309,7 @@ section {
 }
 
 @media (max-width: 550px) {
-  .listSideBar {
+  .nav__listSideBar {
     display: block;
   }
 
@@ -341,4 +334,11 @@ section {
   .projeto {
     width: 100%;
   }
+}
+
+
+/* Classes para manipular elementos */
+
+.transitionScrollEvent {
+  transform: translateX(0px);
 }
