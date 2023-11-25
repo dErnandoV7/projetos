@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/script.js" defer></script>
+    <title>Sorteio</title>
+</head>
+
+<body>
+    <div class="container-sorteio">
+        <div class="inputs-sorteio">
+            <input type="text" data-input-inicial
+                oninput="this.value = this.value.replace(/[^0-9.+-]/g, '');">
+            <input type="text" data-input-final
+                oninput="this.value = this.value.replace(/[^0-9.+-]/g, '');">
+        </div>
+        <button class="sortear-numero">Sortear</button>
+        <div class="numero-sorteado">
+            <h2 class="numero"></h2>
+        </div>
+    </div>
+</body>
+
+</html>

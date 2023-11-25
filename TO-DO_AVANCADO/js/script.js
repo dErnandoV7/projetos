@@ -1,59 +1,111 @@
+// Seleção de elementos
+const todoForm = document.querySelector("#todo-form")
+const todoInput = document.querySelector("[data-todo-input]")
+const todoList = document.querySelector(".todo-list")
+const editForm = document.querySelector("#edit-form")
+const editInput = document.querySelector("[data-edit-input]")
+const cancelEditBtn = document.querySelector("[data-edit-cancel-btn]")
 
-// Container Tarefas
-const containerTodo = document.querySelector(".todo-container")
+let oldInputValue
 
-//  Adicionar tarefa
-const buttonAdd = document.querySelector("[data-todo-add]")
+// Funções
+function saveTodo(text) {
 
-buttonAdd.addEventListener("click", (e) => {
-    e.preventDefault()
+    const todo = document.createElement("div")
+    todo.classList.add("todo")
 
-    // Verificando de o campo foi preenchido
-    const inputTarefa = document.querySelector("[data-todo-input]")
-    if (!inputTarefa.value) return
+    const todoTitle = document.createElement("h3")
+    todoTitle.textContent = text
+    todo.appendChild(todoTitle)
 
-    // template Todo
-    const templateTodo = document.createElement("div")
+    const doneBtn = document.createElement("button")
+    doneBtn.classList.add("finish-todo")
+    doneBtn.innerHTML = `<i class="fa-solid fa-check"></i>`
+    todo.appendChild(doneBtn)
 
-    templateTodo.classList.add("todo")
-    templateTodo.innerHTML = `<h3>${inputTarefa.value}</h3>
-    <button class="finish-todo">
-        <i class="fa-solid fa-check"></i>
-    </button>
-    <button class="edit-todo">
-        <i class="fa-solid fa-pen"></i>
-    </button>
-    <button class="delete-todo">
-        <i class="fa-solid fa-xmark"></i>
-    </button>`
+    const editBtn = document.createElement("button")
+    editBtn.classList.add("edit-todo")
+    editBtn.innerHTML = `<i class="fa-solid fa-pen"></i>`
+    todo.appendChild(editBtn)
 
-    containerTodo.appendChild(templateTodo)
-    inputTarefa.value = ""
-    actions()
-})
+    const deleteBtn = document.createElement("button")
+    deleteBtn.classList.add("remove-todo")
+    deleteBtn.innerHTML = `<i class="fa-solid fa-xmark"></i>`
+    todo.appendChild(deleteBtn)
 
-// Apagar - Editar - Marcar
-function actions() {
-    // Apagar
-    const allButtonDelete = document.querySelectorAll(".delete-todo")
-    allButtonDelete.forEach(button => {
-        button.addEventListener("click", (e) => {
-            e.target.parentElement.remove()
-        })
-    })
+    todoList.appendChild(todo)
 
-    // Marcar
-    const allButtonFinish = document.querySelectorAll(".finish-todo")
-    allButtonFinish.forEach(button => {
-        button.addEventListener("click", (e) => {
-            const elementPai = e.target.parentElement
-            const isFinish = elementPai.classList.
-            contains("done")
-            if (isFinish) {
-                elementPai.classList.remove("done")
-            } else {
-                elementPai.classList.add("done")
-            }
-        })
+    todoInput.value = ""
+    todoInput.focus()
+}
+
+const toggleForms = () => {
+    todoForm.classList.toggle("hide")
+    todoList.classList.toggle("hide")
+    editForm.classList.toggle("hide")
+}
+
+const updateTodo = (text) => {
+    const todos = document.querySelectorAll(".todo")
+
+    todos.forEach(todo => {
+        const title = todo.querySelector("h3")
+        
+        if (title.textContent === oldInputValue) {
+            title.textContent = text
+        }
     })
 }
+
+// Eventos
+todoForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const inputValue = todoInput.value
+    if (inputValue) {
+        saveTodo(inputValue)
+    }
+})
+
+document.addEventListener("click", (e) => {
+    const targetEl = e.target
+    const parentEl = targetEl.parentElement
+    let todoTitle
+
+    if (parentEl && parentEl.querySelector("h3")) {
+        todoTitle = parentEl.querySelector("h3").textContent
+    }
+
+    if (targetEl.classList.contains("finish-todo")) {
+        parentEl.classList.toggle("done")
+    }
+
+    if (targetEl.classList.contains("remove-todo")) {
+        parentEl.remove()
+    }
+
+    if (targetEl.classList.contains("edit-todo")) {
+        toggleForms()
+
+        editInput.value = todoTitle
+        oldInputValue = todoTitle
+    }
+})
+
+cancelEditBtn.addEventListener("click", (e) => {
+    e.preventDefault()
+
+    toggleForms()
+})
+
+editForm.addEventListener("submit", (e) => {
+    e.preventDefault()
+
+    const editInputValue = editInput.value
+
+    if (editInputValue) {
+        updateTodo(editInputValue)
+    }
+
+    toggleForms()
+})
