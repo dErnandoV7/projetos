@@ -1,0 +1,118 @@
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* ---- GERAL ---- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Work Sans', sans-serif;
+    font-weight: 500;
+}
+
+/* ---- CONTAINER PRINCIPAL ---- */
+.container {
+    display: flex;
+    min-height: 100vh;
+}
+
+.container div {
+    flex: 1 1
+}
+
+.title__container {
+    background: url("../img/fundo.jpg") no-repeat center center;
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    padding-top: 200px;
+    padding-left: 50px;
+    font-size: 25px;
+    color: #e0e0e0;
+}
+
+.title__container h1 span {
+    font-weight: bold;
+    color: #ff058f;
+    padding-left: 10px;
+}
+
+.title__container p {
+    margin-top: 100px;
+    font-size: 14px;
+    padding-left: 10px;
+}
+
+/* ---- FORMULÁRIO DE CADASTRO ---- */
+.form__container {
+    padding: 1.5rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #000;
+}
+
+.form__container h2 {
+    font-size: 45px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.form__container p {
+    color: #6c6c6c;
+    margin-bottom: 20px;
+}
+
+.form__container form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-group__form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 24px;
+}
+
+.input-group__form label {
+    font-weight: 600;
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.input-group__form input {
+    padding: 10px 0;
+    border: none;
+    border-bottom: 2px solid #b6b6b6;
+    outline: none;
+    font-size: 16px;
+}
+
+.input-group__form p {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.input-group__form p span {
+    color: #030361;
+    font-weight: bold;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.input-group__form p span:hover {
+    color: #7777f4;
+}
+
+.cadastrar {
+    border: none;
+    background: #2fff6d;
+    color: #fff;
+    border-radius: 40px;
+    padding: 18px 30px;
+    font-size: 20px;
+    margin-top: 30px;
+    width: max-content;
+    align-self: flex-end;
+    cursor: pointer;
+}

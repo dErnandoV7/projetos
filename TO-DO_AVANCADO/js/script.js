@@ -149,15 +149,15 @@ editForm.addEventListener("submit", (e) => {
 
     if (editInputValue) {
         updateTodo(editInputValue)
+        updateTodoLocalStorage(editInputValue)
     }
 
     toggleForms()
 })
 
 searchInput.addEventListener("keyup", (e) => {
-
     const search = e.target.value
-
+    
     getSearchTodos(search)
 })
 
@@ -165,7 +165,6 @@ eraseBtn.addEventListener("click", (e) => {
     e.preventDefault()
 
     searchInput.value = ""
-
     searchInput.dispatchEvent(new Event("keyup"))
 })
 
@@ -206,19 +205,18 @@ const removeTodoLocalStorage = todoText => {
     localStorage.setItem("todos", JSON.stringify(filteredTodos))
 }
 
+const updateTodoLocalStorage = todoTexto => {
+    const todos = getTodosLocalStorage()
+
+    todos.map(todo => todo.text === oldInputValue ? todo.text = todoTexto : null)
+
+    localStorage.setItem("todos", JSON.stringify(todos))
+}
+
 const doneTodoLocalStorage = todoText => {
     const todos = getTodosLocalStorage()
 
-    for (todoKey in todos) {
-        const { text } = todos[todoKey]
-        const selectInLocalStorage = text === todoText
-        if (selectInLocalStorage && !todos[todoKey].done) {
-            todos[todoKey].done = 1
-            break
-        }
-        if (selectInLocalStorage && todos[todoKey].done) todos[todoKey].done = 0
-
-    }
+    todos.map(todo => todo.text === todoText ? todo.done = !todo.done : null)
     localStorage.setItem("todos", JSON.stringify(todos))
 }
 
