@@ -43,27 +43,29 @@
                     <div class="options-container">
                         <div class="options">
                             <label for="quant">Quantidade de caracteres</label>
-                            <input type="number" name="quant" id="quant" class="quant">
+                            <input type="number" name="quant" id="quant" class="quant" value="10">
                         </div>
                         <div class="options">
                             <label for="letras-minusculas">Desejo que minha senha tenha letras minúsculas</label>
-                            <input type="checkbox" name="letras-minusculas" id="letras-minusculas">
+                            <input type="checkbox" name="letras-minusculas" id="letras-minusculas" checked>
                         </div>
                         <div class="options">
                             <label for="letras-maiusculas">Desejo que minha senha tenha letras maiúsculas</label>
-                            <input type="checkbox" name="letras-maiusculas" id="letras-maiusculas">
+                            <input type="checkbox" name="letras-maiusculas" id="letras-maiusculas" checked>
                         </div>
                         <div class="options">
                             <label for="numeros">Desejo que minha senha tenha números</label>
-                            <input type="checkbox" name="numeros" id="numeros">
+                            <input type="checkbox" name="numeros" id="numeros" checked>
                         </div>
                         <div class="options">
                             <label for="simbolos">Desejo que minha senha tenha símbolos</label>
-                            <input type="checkbox" name="simbolos" id="simbolos">
+                            <input type="checkbox" name="simbolos" id="simbolos" checked>
                         </div>
                     </div>
                     <button class="gerar-senha-avancada">Gerar senha</button>
-                    <h4 class="senha"></h4>
+                    <div class="senha hide">
+                        <h4></h4> <img src="img/copy.svg" alt="Copiar senha" class="copy-password">
+                    </div>
                 </div>
                 <div class="input-group__form">
                     <label for="confirmar_senha">Confirmação de senha</label>

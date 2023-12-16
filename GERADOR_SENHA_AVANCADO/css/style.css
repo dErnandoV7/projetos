@@ -204,6 +204,17 @@ body {
     padding: 4px;
 }
 
+.senha {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.senha img {
+    margin-bottom: 10px;
+}
+
 .notification {
     background: #ff00006c;
     padding: 8px 14px;

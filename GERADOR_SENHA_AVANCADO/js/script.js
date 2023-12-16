@@ -43,6 +43,7 @@ const gerarSenha = (regras) => {
         const random = functionsGetCaracters[Math.floor(Math.random() * functionsGetCaracters.length)]()
         password += random
     }
+    senhaGeradaElement.querySelector(".senha").classList.remove("hide")
     senhaGeradaElement.querySelector("h4").textContent = password
 }
 
@@ -60,6 +61,7 @@ const gerarSenhaBtn = document.querySelector(".gerar-senha-avancada")
 const allInputsRegrasSenha = document.querySelectorAll(".options-container input")
 const allInputRegrasObj = {}
 const allFunctions = [getLetterLowerCase, getLetterUpperCase, getNumber, getCaracterSpecial]
+const copyPasswordBtn = document.querySelector(".copy-password")
 
 // ---- Métodos ----
 allInputsRegrasSenha.forEach(input => {
@@ -134,3 +136,12 @@ gerarSenhaBtn.addEventListener("click", e => {
     gerarSenha(selectRegras)
 })
 
+copyPasswordBtn.addEventListener("click", e => {
+    e.preventDefault()
+
+    const password = senhaGeradaElement.querySelector("h4").textContent
+
+    navigator.clipboard.writeText(password).then(() => {
+        alert("Senha copiada com sucesso")
+    })
+})
