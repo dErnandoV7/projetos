@@ -189,6 +189,13 @@ body {
     border-radius: 1rem;
     font-size: 20px;
     margin-bottom: 30px;
+    cursor: pointer;
+    opacity: .8;
+    transition: .3s;
+}
+
+.gerar-senha-avancada:hover {
+    opacity: 1;
 }
 
 .quant {
