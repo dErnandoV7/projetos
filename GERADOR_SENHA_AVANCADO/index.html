@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
 
     <title>Crie sua conta!</title>
 </head>
+
 <body>
     <div class="container">
         <div class="title__container">
@@ -20,24 +22,63 @@
             <form>
                 <div class="input-group__form">
                     <label for="nome">Nome</label>
-                    <input type="text" id="nome" placeholder="Digite seu nome">
+                    <input type="text" class="input-form" id="nome" placeholder="Digite seu nome" name="nome" required>
+                    <span class="msg_error hide">Campo obrigatório!</span>
                 </div>
                 <div class="input-group__form">
                     <label for="email">E-mail</label>
-                    <input type="email" id="email" placeholder="Digite seu e-mail">
+                    <input type="email" class="input-form" id="email" placeholder="Digite seu e-mail" name="email"
+                        required>
+                    <span class="msg_error hide">Campo obrigatório!</span>
                 </div>
                 <div class="input-group__form">
                     <label for="senha">Senha</label>
-                    <input type="password" id="senha" placeholder="Digite sua senha">
-                    <p>Quer ajuda para criar uma senha segura? <span>Clique aqui!</span></p>
+                    <input type="password" class="input-form" id="senha" placeholder="Digite sua senha" name="senha"
+                        required>
+                    <span class="msg_error hide">Campo obrigatório!</span>
+                    <p>Quer ajuda para criar uma senha segura? <span class="gerar-senha">Clique aqui!</span></p>
+                </div>
+                <div class="senha-gerada">
+                    <p>Configure sua senha:</p>
+                    <div class="options-container">
+                        <div class="options">
+                            <label for="quant">Quantidade de caracteres</label>
+                            <input type="number" name="quant" id="quant" class="quant">
+                        </div>
+                        <div class="options">
+                            <label for="letras-minusculas">Desejo que minha senha tenha letras minúsculas</label>
+                            <input type="checkbox" name="letras-minusculas" id="letras-minusculas">
+                        </div>
+                        <div class="options">
+                            <label for="letras-maiusculas">Desejo que minha senha tenha letras maiúsculas</label>
+                            <input type="checkbox" name="letras-maiusculas" id="letras-maiusculas">
+                        </div>
+                        <div class="options">
+                            <label for="numeros">Desejo que minha senha tenha números</label>
+                            <input type="checkbox" name="numeros" id="numeros">
+                        </div>
+                        <div class="options">
+                            <label for="simbolos">Desejo que minha senha tenha símbolos</label>
+                            <input type="checkbox" name="simbolos" id="simbolos">
+                        </div>
+                    </div>
+                    <button class="gerar-senha-avancada">Gerar senha</button>
+                    <h4 class="senha"></h4>
                 </div>
                 <div class="input-group__form">
                     <label for="confirmar_senha">Confirmação de senha</label>
-                    <input type="password" id="confirmar_senha" placeholder="Confirme sua senha">
+                    <input type="password" class="input-form" id="confirmar_senha" placeholder="Confirme sua senha"
+                        name="confirm-senha" required>
+                    <span class="msg_error hide">Campo obrigatório!</span>
                 </div>
                 <button class="cadastrar">Cadastrar</button>
             </form>
         </div>
     </div>
+
+    <!-- notificações -->
+    <div class="caracter-limite notification">O número máximo de caracter é 15!</div>
+    <div class="caracter-minimo notification">O número mínimo de caracter é 8!</div>
 </body>
+
 </html>
