@@ -1,0 +1,189 @@
+/* --- Font 'Roboto' --- */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/* --- Regras gerais --- */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+input,
+button,
+label,
+textarea,
+i {
+    border: none;
+    cursor: pointer;
+    background: none;
+    outline: none;
+    resize: none;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    min-height: 100vh;
+    background: #202124;
+}
+
+/* Cabeçalho */
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 1.5rem .4rem;
+    border-bottom: 1px solid #fff;
+}
+
+.title {
+    color: #fff;
+}
+
+.search-notes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-notes__input-group {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.search-notes__input-group input {
+    background: #525356;
+    padding: .4rem;
+    border-radius: 6px;
+    color: #fff;
+    width: 250px;
+    outline: none;
+}
+
+.exportar-csv {
+    display: flex;
+    align-items: center;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    padding: 6px 12px;
+    opacity: .8;
+    background: #202124;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.exportar-csv button {
+    color: #fff;
+    font-size: 12px;
+}
+
+.exportar-csv button i {
+    margin-left: 4px;
+}
+
+.exportar-csv:hover {
+    opacity: 1;
+}
+
+/* --- Conteudo principal */
+.create-notes-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 16px;
+    padding: 1rem 10px;
+    margin-bottom: 20px;
+}
+
+.create-notes-container input {
+    border-radius: 6px;
+    border: 1px solid #525356;
+    padding: 6px;
+    color: #fff;
+}
+
+.create-notes-container input::placeholder {
+    color: #525356;
+}
+
+.create-notes-container button {
+    background: #525356;
+    padding: 6px 8px;
+    border-radius: 6px;
+}
+
+.notes-container {
+    padding: 1rem 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    gap: 30px;
+    color: #fff;
+    width: 100%;
+    max-width: 1200px;
+    flex-wrap: wrap;
+}
+
+.notes {
+    border-radius: 6px;
+    border: 1px solid #fff;
+    padding: .8rem;
+    width: 280px;
+    height: 280px;
+    position: relative;
+}
+
+.notes-container__content {
+    color: #fff;
+    min-width: 90%;
+    min-height: 90%;
+}
+
+.notes:hover .notes-container-actions {
+    opacity: 1;
+}
+
+.fixed {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+}
+
+.notes-container-actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    position: absolute;
+    right: 15px;
+    top: 12px;
+    transition: .4s;
+    opacity: 0;
+}
+
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+    header {
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+    }
+
+    .title {
+        margin-top: 20px;
+        margin-bottom: 30px;
+    }
+
+    .search-notes {
+        margin-bottom: 20px;
+    }
+
+    .exportar-csv {
+        top: 6px;
+        right: 6px;
+        position: absolute;
+    }
+}

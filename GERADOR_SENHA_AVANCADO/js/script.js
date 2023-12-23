@@ -140,8 +140,9 @@ copyPasswordBtn.addEventListener("click", e => {
     e.preventDefault()
 
     const password = senhaGeradaElement.querySelector("h4").textContent
-
-    navigator.clipboard.writeText(password).then(() => {
-        alert("Senha copiada com sucesso")
-    })
+    navigator.clipboard.writeText(password)
+        .then(() => { console.log('Text copied to clipboard...') })
+        .catch(err => {
+            console.log('Something went wrong', err);
+        })
 })

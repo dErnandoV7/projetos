@@ -149,7 +149,7 @@ body {
     align-items: center;
     flex-direction: column;
     padding: 10px;
-    
+
 }
 
 .senha-gerada p {
@@ -182,6 +182,7 @@ body {
 }
 
 .gerar-senha-avancada {
+    cursor: pointer;
     border: none;
     background: #2fff6d;
     color: #fff;
@@ -189,7 +190,6 @@ body {
     border-radius: 1rem;
     font-size: 20px;
     margin-bottom: 30px;
-    cursor: pointer;
     opacity: .8;
     transition: .3s;
 }
@@ -213,6 +213,10 @@ body {
 
 .senha img {
     margin-bottom: 10px;
+}
+
+.copy-password {
+    cursor: pointer;
 }
 
 .notification {
