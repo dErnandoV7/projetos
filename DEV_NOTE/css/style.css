@@ -134,6 +134,7 @@ header {
     padding: .8rem;
     width: 280px;
     height: 280px;
+    transition: .4s;
     position: relative;
 }
 
@@ -162,6 +163,14 @@ header {
     top: 12px;
     transition: .4s;
     opacity: 0;
+}
+
+.note-fixed {
+    background: #3c3c3c;
+}
+
+.hide {
+    display: none;
 }
 
 /* --- Responsividade --- */
