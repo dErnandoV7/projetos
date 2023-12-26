@@ -163,10 +163,19 @@ header {
     top: 12px;
     transition: .4s;
     opacity: 0;
+  font-size: 20px;
 }
 
 .note-fixed {
     background: #3c3c3c;
+}
+
+.icon-fixed {
+  padding: 8px;
+  background: #3c3c3c;
+  border-radius: 6px;
+  box-shadow: 0px 0px 10px #3c3c3c;
+  font-size: 20px
 }
 
 .hide {
