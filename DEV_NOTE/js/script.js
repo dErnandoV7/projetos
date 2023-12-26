@@ -9,153 +9,198 @@ const search = document.querySelector("#search-notes")
 // --- Funções ---
 
 // Função para criar notas
-const createNotes = (text, save = 1, fixed = 0) => {
+const createNotes = (text, save = 1, fixed = 0, id) => {
 
-    const notesObj = {
-        textContent: text,
-        fixed: false
-    }
-    // Criando cada elemento e lhes dando as devidas configurações
-    const notesElement = document.createElement("div")
-    notesElement.classList.add("notes")
+  const idNotes = toDefineId()
 
-    if (fixed) notesElement.classList.add("note-fixed")
+  const notesObj = {
+    id: idNotes,
+    textContent: text,
+    fixed: false
+  }
 
-    const textareaElement = document.createElement("textarea")
-    textareaElement.setAttribute("name", "notes-container__content")
-    textareaElement.setAttribute("id", "notes-container__content")
-    textareaElement.classList.add("notes-container__content")
-    textareaElement.value = text
-    const notesActionsElement = document.createElement("div")
-    notesActionsElement.classList.add("notes-container-actions")
+  // Criando cada elemento e lhes dando as devidas configurações
+  const notesElement = document.createElement("div")
+  notesElement.classList.add("notes")
 
-    const actionDelete = document.createElement("div")
-    actionDelete.classList.add("delete")
+  if (save) {
+    notesElement.setAttribute("id", idNotes)
+  } else {
+    notesElement.setAttribute("id", id)
+  }
 
-    const iconDelete = document.createElement("i")
-    iconDelete.setAttribute("class", "fa-solid fa-xmark icon-delete")
+  if (fixed) notesElement.classList.add("note-fixed")
 
-    const actionCopy = document.createElement("div")
-    actionCopy.classList.add("copy")
+  const textareaElement = document.createElement("textarea")
+  textareaElement.setAttribute("name", "notes-container__content")
+  textareaElement.setAttribute("id", "notes-container__content")
+  textareaElement.classList.add("notes-container__content")
+  textareaElement.value = text
+  const notesActionsElement = document.createElement("div")
+  notesActionsElement.classList.add("notes-container-actions")
 
-    const iconCopy = document.createElement("i")
-    iconCopy.setAttribute("class", "fa-regular fa-copy icon-copy")
+  const actionDelete = document.createElement("div")
+  actionDelete.classList.add("delete")
 
-    const actionFixed = document.createElement("div")
-    actionFixed.classList.add("fixed")
+  const iconDelete = document.createElement("i")
+  iconDelete.setAttribute("class", "fa-solid fa-xmark icon-delete")
 
-    const iconFixed = document.createElement("i")
-    iconFixed.style.color = "#ffffff"
-    iconFixed.setAttribute("class", "fa-solid fa-shield icon-fixed")
+  const actionCopy = document.createElement("div")
+  actionCopy.classList.add("copy")
 
-    // Adicionando cada elemento ao seu elemento 'pai'
-    actionDelete.appendChild(iconDelete)
-    actionCopy.appendChild(iconCopy)
-    actionFixed.appendChild(iconFixed)
-    notesActionsElement.appendChild(actionDelete)
-    notesActionsElement.appendChild(actionCopy)
-    notesElement.appendChild(textareaElement)
-    notesElement.appendChild(notesActionsElement)
-    notesElement.appendChild(actionFixed)
-    containerNotes.appendChild(notesElement)
+  const iconCopy = document.createElement("i")
+  iconCopy.setAttribute("class", "fa-regular fa-copy icon-copy")
 
-    // Limpar valor do input 
-    addNotesInput.value = ""
+  const actionFixed = document.createElement("div")
+  actionFixed.classList.add("fixed")
 
-    // Salvando no LocalStorage
-    if (save) saveLocalStorage(notesObj)
+  const iconFixed = document.createElement("i")
+  iconFixed.style.color = "#ffffff"
+  iconFixed.setAttribute("class", "fa-solid fa-shield icon-fixed")
+
+  // Adicionando cada elemento ao seu elemento 'pai'
+  actionDelete.appendChild(iconDelete)
+  actionCopy.appendChild(iconCopy)
+  actionFixed.appendChild(iconFixed)
+  notesActionsElement.appendChild(actionDelete)
+  notesActionsElement.appendChild(actionCopy)
+  notesElement.appendChild(textareaElement)
+  notesElement.appendChild(notesActionsElement)
+  notesElement.appendChild(actionFixed)
+  containerNotes.appendChild(notesElement)
+
+  // Limpar valor do input 
+  addNotesInput.value = ""
+
+  // Salvando no LocalStorage
+  if (save) saveLocalStorage(notesObj)
 }
 
-const changeFixed = (notesElement, notesTextContent, fixed) => {
-    notesElement.forEach(note => {
-        if (notesTextContent === note.textContent) {
-            const noteSelect = note
 
-            const indice = notesElement.indexOf(note)
-            notesElement.splice(indice, 1)
+const changeFixed = (notesElement, id, fixed) => {
+  notesElement.forEach(note => {
+    if (id == note.id) {
+      const noteSelect = note
+
+      const indice = notesElement.indexOf(note)
+      notesElement.splice(indice, 1)
 
 
-            if (!fixed) {
-                noteSelect.fixed = true
-                notesElement.unshift(noteSelect)
-            } else {
-                noteSelect.fixed = false
-                notesElement.push(noteSelect)
-            }
+      if (!fixed) {
+        noteSelect.fixed = true
+        notesElement.unshift(noteSelect)
+      } else {
+        noteSelect.fixed = false
+        notesElement.push(noteSelect)
+      }
 
-            localStorage.setItem("notes", JSON.stringify(notesElement))
+      localStorage.setItem("notes", JSON.stringify(notesElement))
 
-            containerNotes.innerHTML = ''
-            showNotes()
-            return
-        }
-    })
+      containerNotes.innerHTML = ''
+      showNotes()
+      return
+    }
+  })
 }
 
 // Coletando os dados do LocalStoragea
 const getLocalStorage = () => {
-    const notes = JSON.parse(localStorage.getItem("notes") || "[]")
+  const notes = JSON.parse(localStorage.getItem("notes") || "[]")
 
-    return notes
+  return notes
 }
 
 const showNotes = () => {
-    getLocalStorage().forEach(note => {
-        const text = note.textContent
-        const isFixed = note.isFixed
-        createNotes(text, false, isFixed)
-    })
+  getLocalStorage().forEach(note => {
+    const text = note.textContent
+    const isFixed = note.fixed
+    const id = note.id
+    createNotes(text, false, isFixed, id)
+  })
 }
 
 // Salvando os dados do LocalStorage
 const saveLocalStorage = (note) => {
-    const notes = JSON.parse(localStorage.getItem("notes") || "[]")
-    notes.push(note)
-    localStorage.setItem("notes", JSON.stringify(notes))
+  const notes = JSON.parse(localStorage.getItem("notes") || "[]")
+  notes.push(note)
+  localStorage.setItem("notes", JSON.stringify(notes))
+}
+
+// Gerar id para cada nota
+const toDefineId = () => {
+  const idRandom = Math.floor(Math.random() * 1000)
+  getLocalStorage().forEach(note => {
+    if (note.id == idRandom) {
+      return toDefineId()
+    }
+  })
+
+  return idRandom
 }
 
 // --- Eventos ---
 addNotesBtn.addEventListener("click", () => {
-    if (addNotesInput.value) createNotes(addNotesInput.value)
+  if (addNotesInput.value) createNotes(addNotesInput.value)
 })
 
 document.addEventListener("click", e => {
-    const element = e.target
-    const classElement = element.getAttribute("class")
+  const element = e.target
+  const classElement = element.getAttribute("class")
 
-    // Acessando a 'nota' correspondente ao icone clicado (no seguintes casos: o icone de fixar ter sido clicado)
-    const elementNotes = element.parentElement.parentElement
+  // Acessando a 'nota' correspondente ao icone clicado (no seguintes casos: o icone de fixar ter sido clicado)
+  const elementNotes = element.parentElement.parentElement
 
-    // Excluir nota
-    if (classElement.includes("icon-delete")) {
-        const text = elementNotes.parentElement.querySelector("textarea").value
-        elementNotes.parentElement.remove()
-        const notes = getLocalStorage()
+  // Excluir nota
+  if (classElement.includes("icon-delete")) {
+    const id = elementNotes.parentElement.getAttribute("id")
+    elementNotes.parentElement.remove()
 
-        notes.forEach(note => {
-            if (note.textContent === text) {
-                const indice = notes.indexOf(note)
-                notes.splice(indice, 1)
-            }
-        })
+    const notes = getLocalStorage()
 
-        localStorage.setItem("notes", JSON.stringify(notes))
-    }
+    notes.forEach(note => {
+      if (note.id == id) {
+        const indice = notes.indexOf(note)
+        notes.splice(indice, 1)
+      }
+    })
 
-    // Copiar nota
-    if (classElement.includes("icon-copy")) {
-        const notesText = elementNotes.parentElement.querySelector("textarea").value
-        createNotes(notesText)
-    }
+    localStorage.setItem("notes", JSON.stringify(notes))
+  }
 
-    // Fixar nota
-    if (classElement.includes("icon-fixed")) {
-        const isFixed = elementNotes.classList.contains("note-fixed")
-        const notes = getLocalStorage()
-        const notesText = elementNotes.querySelector("textarea").value
-        
-        changeFixed(notes, notesText, isFixed)
-    }
+  // Copiar nota
+  if (classElement.includes("icon-copy")) {
+    const id = elementNotes.parentElement.getAttribute("id")
+    let valueNotes
+    getLocalStorage().forEach(note => {
+      if (note.id == id) valueNotes = note.textContent
+    })
+
+    createNotes(valueNotes)
+  }
+
+  // Fixar nota
+  if (classElement.includes("icon-fixed")) {
+    const isFixed = elementNotes.classList.contains("note-fixed")
+    const notes = getLocalStorage()
+    const idNotes = elementNotes.getAttribute("id")
+
+    changeFixed(notes, idNotes, isFixed)
+  }
+
+  // Alterar dados do note no LocalStorage
+  if (element.classList.contains("notes-container__content")) {
+
+    element.addEventListener("keyup", () => {
+      const notes = getLocalStorage()
+      const id = element.parentElement.getAttribute("id")
+
+      notes.forEach(note => {
+        if (note.id == id) note.textContent = element.value
+      })
+
+      localStorage.setItem("notes", JSON.stringify(notes))
+    })
+  }
 })
 
 // Funções de inicialização
@@ -163,15 +208,15 @@ showNotes()
 
 // Realizar pesquisa por notas
 search.addEventListener("keyup", () => {
-    const notes = document.querySelectorAll(".notes")
-    const valueSearch = search.value
+  const notes = document.querySelectorAll(".notes")
+  const valueSearch = search.value.toLowerCase()
 
-    notes.forEach(note => {
-        const valueNotes = note.querySelector("textarea").value
-        if (valueNotes.includes(valueSearch)) {
-            note.classList.remove("hide")
-        } else {
-            note.classList.add("hide")
-        }
-    })
+  notes.forEach(note => {
+    const valueNotes = note.querySelector("textarea").value.toLowerCase()
+    if (valueNotes.includes(valueSearch)) {
+      note.classList.remove("hide")
+    } else {
+      note.classList.add("hide")
+    }
+  })
 })
