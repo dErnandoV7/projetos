@@ -5,6 +5,7 @@ const addNotesBtn = document.querySelector(".create-button-notes")
 const addNotesInput = document.querySelector(".create-text-notes")
 const containerNotes = document.querySelector(".notes-container")
 const search = document.querySelector("#search-notes")
+const exportcsvBtn = document.querySelector(".exportar-csv-btn")
 
 // --- Funções ---
 
@@ -131,6 +132,21 @@ const toDefineId = () => {
   return idRandom
 }
 
+const exportData = () => {
+  const notes = getLocalStorage()
+
+  const stringExport = [
+    ["ID", "Conteúdo", "Fixado?"],
+    ...notes.map(note => [note.id, note.textContent, note.fixed])
+  ].map(e => e.join(',')).join("\n")
+
+  const element = document.createElement("a")
+
+  element.target = "_blank"
+  element.href = "data:text/csv;charset=utf-8," + encodeURI(stringExport)
+  element.download = "arquivo.csv"
+  element.click()
+}
 // --- Eventos ---
 addNotesBtn.addEventListener("click", () => {
   if (addNotesInput.value) createNotes(addNotesInput.value)
@@ -195,6 +211,9 @@ document.addEventListener("click", e => {
     })
   }
 })
+
+// Exportar csv
+exportcsvBtn.addEventListener("click", () => exportData())
 
 // Funções de inicialização
 showNotes()
