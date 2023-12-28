@@ -80,21 +80,14 @@ const createNotes = (text, save = 1, fixed = 0, id) => {
 const changeFixed = (notesElement, id, fixed) => {
   notesElement.forEach(note => {
     if (id == note.id) {
-      const noteSelect = note
-
+      const notes = getLocalStorage()
       const indice = notesElement.indexOf(note)
-      notesElement.splice(indice, 1)
 
+      fixed ? notes[indice].fixed = false : notes[indice].fixed = true
 
-      if (!fixed) {
-        noteSelect.fixed = true
-        notesElement.unshift(noteSelect)
-      } else {
-        noteSelect.fixed = false
-        notesElement.push(noteSelect)
-      }
-
-      localStorage.setItem("notes", JSON.stringify(notesElement))
+      const notesOrder = notes.sort((a, b) => (a.fixed > b.fixed ? -1 : 1))
+      console.log(notesOrder)
+      localStorage.setItem("notes", JSON.stringify(notesOrder))
 
       containerNotes.innerHTML = ''
       showNotes()
