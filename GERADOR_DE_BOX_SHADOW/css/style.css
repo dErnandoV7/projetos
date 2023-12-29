@@ -120,3 +120,11 @@ input {
     border: 1px solid #7e7e7e;
     padding: 1rem;
 }
+
+/* --- Responsividade --- */
+@media (max-width: 600px) {
+  .generator-box-shadow-container {
+    flex-direction: column;
+    padding: 3rem 2rem;
+  }
+}
