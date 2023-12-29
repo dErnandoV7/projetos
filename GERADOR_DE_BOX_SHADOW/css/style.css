@@ -52,6 +52,11 @@ input {
     margin-bottom: 20px;
 }
 
+.inset {
+    width: 20px;
+    height: 20px;
+}
+
 .reference-control {
     display: flex;
     align-items: center;
@@ -59,8 +64,9 @@ input {
 }
 
 .reference-control input {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
+    text-align: center;
 }
 
 .range-input input[type="range"] {
@@ -75,7 +81,8 @@ input {
     border-radius: 50%;
     width: 25px;
     height: 25px;
-    background: #e9d60a;
+    /* background: #e9d60a; */
+    background: rgba(0, 0, 0, 0.546);
     cursor: pointer;
 }
 
@@ -93,16 +100,23 @@ input {
 /* Área de geração */
 .gerenated-rule {
     text-align: center;
+    background: #d4d4d4;
+    padding: 1rem .8rem;
+    color: #262626;
+}
+
+.gerenated-rule h3 {
+    margin-bottom: 20px;
 }
 
 .gerenated-rule p {
     margin-bottom: .5rem;
 }
 
-.rule-area {
+.rules-area {
     background: #d3d3d3;
     max-width: 1000px;
     margin: 0 auto;
-    border: 2px solid #e9d60a;
+    border: 1px solid #7e7e7e;
     padding: 1rem;
 }
