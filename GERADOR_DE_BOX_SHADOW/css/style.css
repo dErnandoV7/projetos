@@ -119,6 +119,7 @@ input {
     margin: 0 auto;
     border: 1px solid #7e7e7e;
     padding: 1rem;
+    font-size : 14px;
 }
 
 /* --- Responsividade --- */
