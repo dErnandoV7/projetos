@@ -1,0 +1,178 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Elemento de apresentação */
+.presentation {
+  padding: 3.7rem 10px;
+  min-height: 100vh;
+  background: url(../img/carro_fundo.png) no-repeat center center;
+  background-size: cover;
+}
+
+.presentation-content h1 {
+  padding: 0 1rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  font-size: 32px;
+  color: #fff;
+  margin-bottom: 25px;
+}
+
+.presentation-content h1 strong {
+  color: #ff9600;
+}
+
+.presentation-content h2 {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 60px;
+}
+
+.presentation-content {
+  margin: 0 auto;
+  width: 95%;
+  max-width: 650px;
+  text-align: center;
+}
+
+.video-container video {
+  width: 100%;
+  border: 1px solid #ff950091;
+  margin-bottom: 15px;
+}
+
+.presentation-content p {
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  margin-bottom: 15px;
+}
+
+.comprar {
+  display: inline-block;
+  background: #0fca22;
+  padding: 20px 30px;
+  font-size: 16px;
+  text-transform: uppercase;
+  border-radius: 5px;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0px 0px 10px 0px #0fca22;
+  animation: animationBtn 1s infinite linear;
+}
+
+/* Elementos Cards */
+.cards {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  flex-wrap: wrap;
+  background: linear-gradient(90deg, #e8e8e8 41%, #00000042 100%);
+  padding: 4.5rem 0.5rem;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  max-width: 326px;
+}
+
+.card-icon {
+  min-width: 20%;
+}
+
+.card-icon i {
+  font-size: 50px;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-bottom: 4px;
+}
+
+.card p {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 16px;
+}
+
+/* Sobre mim */
+.about-me {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 4rem 1rem;
+  background: url(../img/carro_me.jfif) no-repeat center center;
+  background-size: cover;
+}
+
+.about-me-content {
+  width: 95%;
+  max-width: 450px;
+  position: relative;
+  left: -20%;
+}
+
+.about-me-content h2 {
+  font-size: 50px;
+  font-weight: bold;
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.about-me-content p {
+  color: #fff;
+  font-weight: 500;
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.about-me-content a {
+  display: inline-block;
+  background: #ff0049;
+  font-size: 18px;
+  padding: 20px 40px;
+  color: #fff;
+  border-radius: 6px;
+  animation: animationBtn 1s infinite linear;
+}
+
+@keyframes animationBtn {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Responsividade */
+@media (max-width: 600px) {
+  .about-me-content {
+    left: 0;
+  }
+
+  .card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+}
