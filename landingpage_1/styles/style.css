@@ -46,10 +46,81 @@
   text-align: center;
 }
 
+.video-container {
+  position: relative;
+  margin-bottom: 15px;
+}
+
 .video-container video {
   width: 100%;
   border: 1px solid #ff950091;
-  margin-bottom: 15px;
+  cursor: pointer;
+}
+
+.options-video,
+.play-pause {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.options-video {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: rgba(0, 0, 0, 0.792);
+  backdrop-filter: blur(3px);
+  top: 0;
+  padding: 2px;
+  color: #fff;
+}
+
+.options-video h2 {
+  margin-bottom: 20px;
+}
+
+.options-video h2 strong {
+  color: #ff9600;
+}
+
+.options-video ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+  list-style: none;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.options-video ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+.options-video ul li i {
+  color: #ff9600;
+  font-size: 16px;
+}
+.play-pause {
+  cursor: pointer;
+  display: inline-block;
+  background: url(../img/play-pause.png) no-repeat center center;
+  background-size: 30%;
+}
+
+.barTimerVideo {
+  position: absolute;
+  bottom: 3px;
+  width: 0%;
+  height: 3px;
+  background: #fff;
 }
 
 .presentation-content p {
@@ -115,7 +186,7 @@
   align-items: flex-end;
   justify-content: flex-end;
   padding: 4rem 1rem;
-  background: url(../img/carro_me.jfif) no-repeat center center;
+  background: url(../img/carro_me.jpg) no-repeat center center;
   background-size: cover;
 }
 
@@ -143,6 +214,8 @@
 .about-me-content a {
   display: inline-block;
   background: #ff0049;
+  text-transform: uppercase;
+  font-weight: bold;
   font-size: 18px;
   padding: 20px 40px;
   color: #fff;
@@ -204,7 +277,7 @@
 details summary {
   cursor: pointer;
   /* margin-bottom: -10px; */
-  transition: margin .5s ease-out;
+  transition: margin 0.5s ease-out;
 }
 
 details[open] summary {
@@ -235,5 +308,17 @@ details[open] summary {
     flex-direction: column;
     align-items: center;
     text-align: center;
+    max-width: 200px;
   }
+}
+
+@media (max-width: 350px) {
+  .questions-container h2 {
+    font-size: 30px;
+  }
+}
+
+/* Manipulação Js */
+.hide {
+  display: none;
 }
