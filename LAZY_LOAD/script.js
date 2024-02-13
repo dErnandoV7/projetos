@@ -5,7 +5,6 @@ const observerImg = new IntersectionObserver((entries, observer) => {
         if (!entry.isIntersecting) return
         const img = entry.target
         img.src = img.src.replace("&w=10&", "&w=1000&")
-        observer.unobserve(img);
     })
 }, {})
 
